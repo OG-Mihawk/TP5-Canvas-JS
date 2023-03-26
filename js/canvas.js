@@ -1,10 +1,11 @@
 compteur = 0
 ctx= null;
 vitesse = 1;
+var interval = null;
 function create(){
     var canvas = document.getElementById('mon_canvas');
     ctx = canvas.getContext('2d');
-    setInterval(create_cirle, 1000/vitesse)
+    interval = setInterval(create_cirle, 1000/vitesse)
     document.addEventListener('click', click)
     var copie = document.getElementById('message');
     copie.innerHTML = "Le nombre de cercle est de : " + liste_cirlce.length + " et le nombre de clic est de : " + compteur
@@ -33,7 +34,6 @@ function click(event){
 
 
 function create_cirle() {
-
     ctx.beginPath();
     x = Math.floor(Math.random() * 400);
     y = Math.floor(Math.random() * 400);
